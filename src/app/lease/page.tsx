@@ -1,16 +1,42 @@
 import type { Metadata } from 'next';
 import { LeaseCalculator } from '@/components/calculators/LeaseCalculator';
+import { JsonLd } from '@/components/ui/JsonLd';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Car Lease Calculator — Deal Rating & Full Payment Breakdown',
+  title: 'Car Lease Calculator — Is My Lease Deal Good?',
   description:
-    'Find out if your lease is Great, Fair, or Weak. Full breakdown of monthly payment, due at signing, effective APR, and adjusted cap cost.',
+    'Find out if your car lease is a great deal, fair, or a rip-off. Enter your money factor, residual, and cap cost for a full breakdown and honest deal rating.',
+  keywords: ['car lease calculator', 'is my lease a good deal', 'money factor calculator', 'lease deal rating', 'cap cost calculator', 'lease vs buy calculator'],
+  alternates: { canonical: 'https://ismycardealgood.com/lease' },
+  openGraph: {
+    title: 'Car Lease Calculator — Is My Lease Deal Good?',
+    description: 'Enter your lease offer and get a full breakdown plus an honest Great / Fair / Weak deal rating.',
+    url: 'https://ismycardealgood.com/lease',
+  },
+};
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'Car Lease Calculator',
+  url: 'https://ismycardealgood.com/lease',
+  applicationCategory: 'FinanceApplication',
+  description: 'Calculate car lease payments and get a deal rating based on money factor and payment-to-MSRP ratio.',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  breadcrumb: {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://ismycardealgood.com' },
+      { '@type': 'ListItem', position: 2, name: 'Lease Calculator', item: 'https://ismycardealgood.com/lease' },
+    ],
+  },
 };
 
 export default function LeasePage() {
   return (
     <div className="section">
+      <JsonLd data={schema} />
       <div className="container max-w-3xl">
         <div className="mb-10">
           <div className="flex items-center gap-1.5 text-xs text-zinc-600 mb-5">
