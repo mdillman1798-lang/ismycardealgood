@@ -5,7 +5,7 @@ export function BlogCard({ post }: { post: BlogPost }) {
   return (
     <Link
       href={`/blog/${post.slug}`}
-      className="group block bg-white rounded-xl border border-zinc-200 p-6 hover:shadow-md hover:border-brand-200 transition-all"
+      className="group block bg-zinc-900 rounded-xl border border-white/[0.07] p-6 hover:shadow-md hover:border-brand-500/40 transition-all"
     >
       <div className="flex items-center gap-2 mb-3">
         <span className="text-xs font-semibold text-brand-600 bg-brand-50 border border-brand-100 px-2 py-0.5 rounded-full">
@@ -13,7 +13,7 @@ export function BlogCard({ post }: { post: BlogPost }) {
         </span>
         <span className="text-xs text-zinc-400">{post.readingTime}</span>
       </div>
-      <h2 className="text-base font-semibold text-zinc-900 mb-2 group-hover:text-brand-600 transition-colors leading-snug">
+      <h2 className="text-base font-semibold text-white mb-2 group-hover:text-brand-400 transition-colors leading-snug">
         {post.title}
       </h2>
       <p className="text-sm text-zinc-500 leading-relaxed line-clamp-2 mb-4">{post.description}</p>

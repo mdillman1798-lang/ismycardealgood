@@ -15,11 +15,11 @@ export default function BlogPage() {
       <div className="container">
         <div className="mb-4">
           <div className="flex items-center gap-2 text-sm text-zinc-500 mb-4">
-            <Link href="/" className="hover:text-zinc-900 transition-colors">Home</Link>
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <span>/</span>
-            <span className="text-zinc-900 font-medium">Blog</span>
+            <span className="text-white font-medium">Blog</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-bold text-zinc-900 mb-3">Guides & Resources</h1>
+          <h1 className="text-3xl sm:text-4xl font-bold text-white mb-3">Guides & Resources</h1>
           <p className="text-zinc-500 text-lg max-w-xl">
             Straightforward explanations of car finance, leasing, and negotiation — so you know exactly what you're agreeing to.
           </p>
